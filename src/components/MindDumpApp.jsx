@@ -64,7 +64,7 @@ const MindDumpApp = () => {
         summary: "You seem to be dealing with work stress, relationship concerns, and some uncertainty about future decisions. The main themes I notice are feeling overwhelmed, seeking validation, and needing clarity on priorities.",
         insights: [
           "Break down overwhelming tasks into smaller, manageable steps",
-          "Schedule dedicated worry time to contain anxious thoughts",
+          "Schedule dedicated worry time to contain anxious thoughts", 
           "Consider having an honest conversation with the people involved",
           "Practice self-compassion - you're handling more than you realize",
           "Set boundaries between work and personal time"
