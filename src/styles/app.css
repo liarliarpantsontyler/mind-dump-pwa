@@ -2,28 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
-
-@layer base {
-  * {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
+/* Custom animations for the mind dump app */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.8);
+    opacity: 0;
   }
 }
 
-@keyframes scribbleFloat {
-  0% { transform: translateY(0px) rotate(0deg) scale(1); }
-  33% { transform: translateY(-2px) rotate(1deg) scale(1.02); }
-  66% { transform: translateY(1px) rotate(-0.5deg) scale(0.98); }
-  100% { transform: translateY(0px) rotate(0deg) scale(1); }
+@keyframes scribble {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  10% { transform: translateX(-2px) translateY(-1px) rotate(-1deg); }
+  20% { transform: translateX(2px) translateY(1px) rotate(1deg); }
+  30% { transform: translateX(-1px) translateY(-2px) rotate(-1deg); }
+  40% { transform: translateX(1px) translateY(2px) rotate(1deg); }
+  50% { transform: translateX(-2px) translateY(0px) rotate(0deg); }
+  60% { transform: translateX(2px) translateY(-1px) rotate(1deg); }
+  70% { transform: translateX(-1px) translateY(1px) rotate(-1deg); }
+  80% { transform: translateX(1px) translateY(-2px) rotate(1deg); }
+  90% { transform: translateX(-2px) translateY(2px) rotate(-1deg); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); }
 }
 
-.scribble-animation {
-  animation: scribbleFloat 4s ease-in-out infinite;
+@keyframes void-swirl {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8) rotate(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
 }
 
-.circle-number {
-  min-width: 24px !important;
-  width: 24px !important;
-  height: 24px !important;
-  flex-shrink: 0;
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+}
+
+.animate-float-up {
+  animation: float-up 0.8s ease-out forwards;
+}
+
+.animate-scribble {
+  animation: scribble 0.5s ease-in-out;
+}
+
+.animate-void-swirl {
+  animation: void-swirl 1s ease-in-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Sticky note styles */
+.sticky-note {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px;
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6b7280 0%, #374151 100%);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  transform: translateY(-1px);
+}
+
+/* Void effect */
+.void-portal {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(30, 58, 138, 0.6) 70%, transparent 100%);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Loading animation */
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
 }
