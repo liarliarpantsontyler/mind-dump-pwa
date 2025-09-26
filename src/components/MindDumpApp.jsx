@@ -169,113 +169,7 @@ const MindDumpApp = () => {
             alt="Scribble cloud"
             className="absolute top-20 left-10 w-32 h-32 opacity-40 scribble-animation"
             style={{ 
-              filter: 'brightness(0) saturate(100%) invert(51%) sepia(76%) saturate(472%) hue-rotate(344deg) brightness(95%) contrast(86%)',
-              animationDelay: '2s',
-              transform: 'rotate(45deg)'
-            }}
-          />
-          <Brain className="w-16 h-16 relative z-10" style={{ color: '#CD6741' }} />
-        </div>
-        <h1 className="text-4xl font-bold mt-4 mb-4" style={{ color: '#CD6741' }}>
-          Let's Organize<br />Your Brain.
-        </h1>
-        <p className="max-w-md mx-auto leading-relaxed" style={{ color: '#908F88' }}>
-          Type your thoughts below 1 per sticky note. When you're done just tell me. I'll help you solve your problems.
-        </p>
-      </div>
-
-      {notes.length > 0 && (
-        <div className="mb-6 text-center z-10 scale-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full shadow-md" style={{ backgroundColor: '#F9F9F9', border: '2px solid #CD6741' }}>
-            <div className="w-2 h-2 rounded-full void-pulse" style={{ backgroundColor: '#CD6741' }}></div>
-            <span className="font-medium" style={{ color: '#262624' }}>
-              {notes.length} thought{notes.length !== 1 ? 's' : ''} captured
-            </span>
-          </div>
-        </div>
-      )}
-
-      <div className={`relative z-10 transition-all duration-1000 ${showVoidAnimation ? 'void-spin' : 'scale-in'}`}>
-        <div className="rounded-lg shadow-2xl p-8 w-96 h-64 relative transform hover:rotate-1 transition-all duration-300" style={{ backgroundColor: '#F4D1C1' }}>
-          <div className="absolute -top-2 left-8 w-16 h-8 rounded-sm opacity-60 transform -rotate-12" style={{ backgroundColor: '#CD6741' }}></div>
-          <div className="absolute -top-2 right-8 w-16 h-8 rounded-sm opacity-60 transform rotate-12" style={{ backgroundColor: '#CD6741' }}></div>
-          
-          <textarea
-            value={currentNote}
-            onChange={(e) => setCurrentNote(e.target.value)}
-            onKeyPress={handleKeyPress}
-            placeholder={placeholders[placeholderIndex]}
-            className="w-full h-full bg-transparent border-none outline-none resize-none text-lg leading-relaxed transition-all duration-300 placeholder-opacity-60"
-            style={{ 
-              color: '#262624',
-              fontFamily: 'JetBrains Mono, monospace'
-            }}
-          />
-          
-          {currentNote.trim() && (
-            <button
-              onClick={handleSendClick}
-              className="absolute bottom-2 right-2 flex items-center gap-2 text-sm p-2 rounded-lg transition-all duration-200 hover:bg-black hover:bg-opacity-10"
-              style={{ color: '#262624' }}
-            >
-              <Send className="w-4 h-4" />
-              <span>Send & Add a New Thought</span>
-            </button>
-          )}
-        </div>
-      </div>
-
-      {showVoidAnimation && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
-          <div className="bg-white rounded-lg shadow-xl p-4 border-2" style={{ borderColor: '#CD6741' }}>
-            <p className="text-sm font-medium" style={{ color: '#262624' }}>
-              ✨ Thought captured!
-            </p>
-          </div>
-        </div>
-      )}
-
-      {notes.length > 0 && (
-        <div className="mt-8 z-10 slide-in-up">
-          <button
-            onClick={processNotes}
-            disabled={isProcessing}
-            className="px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center gap-2"
-            style={{ 
-              backgroundColor: '#CD6741',
-              color: '#F9F9F9'
-            }}
-            onMouseEnter={(e) => {
-              if (!isProcessing) e.target.style.backgroundColor = '#262624';
-            }}
-            onMouseLeave={(e) => {
-              if (!isProcessing) e.target.style.backgroundColor = '#CD6741';
-            }}
-          >
-            {isProcessing ? (
-              <>
-                <div className="w-5 h-5 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: '#F9F9F9' }}></div>
-                Processing your thoughts...
-              </>
-            ) : (
-              <>
-                Done. Show Me Insights.
-                <ArrowRight className="w-5 h-5" />
-              </>
-            )}
-          </button>
-        </div>
-      )}
-
-      <footer className="absolute bottom-4 text-center" style={{ color: '#908F88' }}>
-        <p className="text-sm">Designed & Developed by Tyler Hunter</p>
-      </footer>
-    </div>
-  );
-};
-
-export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%) hue-rotate(23deg) brightness(93%) contrast(87%)',
-              animationDelay: '0s'
+              filter: 'brightness(0) saturate(100%) invert(56%) sepia(9%) saturate(347%) hue-rotate(23deg) brightness(93%) contrast(87%)'
             }}
           />
           <img 
@@ -284,7 +178,6 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
             className="absolute top-32 right-16 w-24 h-24 opacity-35 scribble-animation"
             style={{ 
               filter: 'brightness(0) saturate(100%) invert(51%) sepia(76%) saturate(472%) hue-rotate(344deg) brightness(95%) contrast(86%)',
-              animationDelay: '1.5s',
               transform: 'rotate(120deg)'
             }}
           />
@@ -294,38 +187,7 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
             className="absolute bottom-24 left-20 w-28 h-28 opacity-30 scribble-animation"
             style={{ 
               filter: 'brightness(0) saturate(100%) invert(56%) sepia(9%) saturate(347%) hue-rotate(23deg) brightness(93%) contrast(87%)',
-              animationDelay: '3s',
               transform: 'rotate(-45deg)'
-            }}
-          />
-          <img 
-            src="https://i.ibb.co/dJpdSvsj/scribble.gif" 
-            alt="Scribble cloud"
-            className="absolute bottom-16 right-12 w-36 h-36 opacity-25 scribble-animation"
-            style={{ 
-              filter: 'brightness(0) saturate(100%) invert(51%) sepia(76%) saturate(472%) hue-rotate(344deg) brightness(95%) contrast(86%)',
-              animationDelay: '2s',
-              transform: 'rotate(210deg)'
-            }}
-          />
-          <img 
-            src="https://i.ibb.co/dJpdSvsj/scribble.gif" 
-            alt="Scribble cloud"
-            className="absolute top-1/2 left-1/4 w-20 h-20 opacity-20 scribble-animation"
-            style={{ 
-              filter: 'brightness(0) saturate(100%) invert(56%) sepia(9%) saturate(347%) hue-rotate(23deg) brightness(93%) contrast(87%)',
-              animationDelay: '4s',
-              transform: 'rotate(75deg)'
-            }}
-          />
-          <img 
-            src="https://i.ibb.co/dJpdSvsj/scribble.gif" 
-            alt="Scribble cloud"
-            className="absolute top-1/3 right-1/3 w-20 h-20 opacity-15 scribble-animation"
-            style={{ 
-              filter: 'brightness(0) saturate(100%) invert(51%) sepia(76%) saturate(472%) hue-rotate(344deg) brightness(95%) contrast(86%)',
-              animationDelay: '5s',
-              transform: 'rotate(-90deg)'
             }}
           />
         </div>
@@ -411,13 +273,12 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
                   className="flex items-start gap-3 p-4 rounded-lg slide-in-up"
                   style={{ 
                     backgroundColor: '#F9F9F9',
-                    border: '1px solid #908F88',
-                    animationDelay: `${index * 0.1}s`
+                    border: '1px solid #908F88'
                   }}
                 >
                   <div 
                     className="circle-number text-white rounded-full flex items-center justify-center text-sm font-bold"
-                    style={{ backgroundColor: '#CD6741' }}
+                    style={{ backgroundColor: '#CD6741', minWidth: '24px', width: '24px', height: '24px' }}
                   >
                     {index + 1}
                   </div>
@@ -475,12 +336,6 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
                 backgroundColor: '#CD6741',
                 color: '#F9F9F9'
               }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#262624';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = '#CD6741';
-              }}
             >
               Start Fresh
             </button>
@@ -528,10 +383,8 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
                   style={{ 
                     backgroundColor: '#F9F9F9',
                     color: '#262624',
-                    borderColor: '#908F88',
-                    fontFamily: 'JetBrains Mono, monospace'
+                    borderColor: '#908F88'
                   }}
-                  autoFocus
                 />
               </div>
 
@@ -573,7 +426,7 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
     <div style={{ backgroundColor: '#F9F9F9', color: '#262624' }} className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-10 float-up" style={{ backgroundColor: '#908F88' }}></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full opacity-10 float-up" style={{ backgroundColor: '#CD6741', animationDelay: '1s' }}></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full opacity-10 float-up" style={{ backgroundColor: '#CD6741' }}></div>
       </div>
 
       <div className="text-center mb-8 z-10 slide-in-down relative">
@@ -583,8 +436,7 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
             alt="Scribble cloud"
             className="absolute -inset-12 w-40 h-40 pointer-events-none opacity-30 scribble-animation"
             style={{ 
-              filter: 'brightness(0) saturate(100%) invert(56%) sepia(9%) saturate(347%) hue-rotate(23deg) brightness(93%) contrast(87%)',
-              animationDelay: '0s'
+              filter: 'brightness(0) saturate(100%) invert(56%) sepia(9%) saturate(347%) hue-rotate(23deg) brightness(93%) contrast(87%)'
             }}
           />
           <img 
@@ -592,4 +444,101 @@ export default MindDumpApp;) saturate(100%) invert(56%) sepia(9%) saturate(347%)
             alt="Scribble cloud"
             className="absolute -inset-10 w-36 h-36 pointer-events-none opacity-25 scribble-animation"
             style={{ 
-              filter: 'brightness(0
+              filter: 'brightness(0) saturate(100%) invert(51%) sepia(76%) saturate(472%) hue-rotate(344deg) brightness(95%) contrast(86%)',
+              transform: 'rotate(45deg)'
+            }}
+          />
+          <Brain className="w-16 h-16 relative z-10" style={{ color: '#CD6741' }} />
+        </div>
+        <h1 className="text-4xl font-bold mt-4 mb-4" style={{ color: '#CD6741' }}>
+          Let's Organize<br />Your Brain.
+        </h1>
+        <p className="max-w-md mx-auto leading-relaxed" style={{ color: '#908F88' }}>
+          Type your thoughts below 1 per sticky note. When you're done just tell me. I'll help you solve your problems.
+        </p>
+      </div>
+
+      {notes.length > 0 && (
+        <div className="mb-6 text-center z-10 scale-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full shadow-md" style={{ backgroundColor: '#F9F9F9', border: '2px solid #CD6741' }}>
+            <div className="w-2 h-2 rounded-full void-pulse" style={{ backgroundColor: '#CD6741' }}></div>
+            <span className="font-medium" style={{ color: '#262624' }}>
+              {notes.length} thought{notes.length !== 1 ? 's' : ''} captured
+            </span>
+          </div>
+        </div>
+      )}
+
+      <div className={`relative z-10 transition-all duration-1000 ${showVoidAnimation ? 'void-spin' : 'scale-in'}`}>
+        <div className="rounded-lg shadow-2xl p-8 w-96 h-64 relative transform hover:rotate-1 transition-all duration-300" style={{ backgroundColor: '#F4D1C1' }}>
+          <div className="absolute -top-2 left-8 w-16 h-8 rounded-sm opacity-60 transform -rotate-12" style={{ backgroundColor: '#CD6741' }}></div>
+          <div className="absolute -top-2 right-8 w-16 h-8 rounded-sm opacity-60 transform rotate-12" style={{ backgroundColor: '#CD6741' }}></div>
+          
+          <textarea
+            value={currentNote}
+            onChange={(e) => setCurrentNote(e.target.value)}
+            onKeyPress={handleKeyPress}
+            placeholder={placeholders[placeholderIndex]}
+            className="w-full h-full bg-transparent border-none outline-none resize-none text-lg leading-relaxed transition-all duration-300 placeholder-opacity-60"
+            style={{ 
+              color: '#262624'
+            }}
+          />
+          
+          {currentNote.trim() && (
+            <button
+              onClick={handleSendClick}
+              className="absolute bottom-2 right-2 flex items-center gap-2 text-sm p-2 rounded-lg transition-all duration-200 hover:bg-black hover:bg-opacity-10"
+              style={{ color: '#262624' }}
+            >
+              <Send className="w-4 h-4" />
+              <span>Send & Add a New Thought</span>
+            </button>
+          )}
+        </div>
+      </div>
+
+      {showVoidAnimation && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          <div className="bg-white rounded-lg shadow-xl p-4 border-2" style={{ borderColor: '#CD6741' }}>
+            <p className="text-sm font-medium" style={{ color: '#262624' }}>
+              ✨ Thought captured!
+            </p>
+          </div>
+        </div>
+      )}
+
+      {notes.length > 0 && (
+        <div className="mt-8 z-10 slide-in-up">
+          <button
+            onClick={processNotes}
+            disabled={isProcessing}
+            className="px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center gap-2"
+            style={{ 
+              backgroundColor: '#CD6741',
+              color: '#F9F9F9'
+            }}
+          >
+            {isProcessing ? (
+              <>
+                <div className="w-5 h-5 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: '#F9F9F9' }}></div>
+                Processing your thoughts...
+              </>
+            ) : (
+              <>
+                Done. Show Me Insights.
+                <ArrowRight className="w-5 h-5" />
+              </>
+            )}
+          </button>
+        </div>
+      )}
+
+      <footer className="absolute bottom-4 text-center" style={{ color: '#908F88' }}>
+        <p className="text-sm">Designed & Developed by Tyler Hunter</p>
+      </footer>
+    </div>
+  );
+};
+
+export default MindDumpApp; 
