@@ -1,7 +1,10 @@
-import MindDumpApp from './components/MindDumpApp'
+import React from 'react'
+import MindDumpApp from './components/MindDumpApp.jsx'
 
 function App() {
-  return <MindDumpApp />
+  return (
+    <MindDumpApp />
+  )
 }
 
 export default App
