@@ -10,7 +10,6 @@
   }
 }
 
-/* Custom animations */
 @keyframes scribbleFloat {
   0% { transform: translateY(0px) rotate(0deg) scale(1); }
   33% { transform: translateY(-2px) rotate(1deg) scale(1.02); }
